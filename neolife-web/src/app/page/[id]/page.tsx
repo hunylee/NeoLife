@@ -44,7 +44,7 @@ export default async function Page({ params }: PageProps) {
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/20 backdrop-blur border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-widest mb-6 shadow-lg">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-            {categoryName} • Page {page.id} / 20
+            {categoryNameClean.toUpperCase()}
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight drop-shadow-2xl leading-tight">
             {page.title}
