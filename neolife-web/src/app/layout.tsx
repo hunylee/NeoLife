@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import TopNavigation from "@/components/TopNavigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NeoLife AI Investment Deck",
-  description: "Replicated presentation deck",
+  title: "NeoLife AI - Investment Deck",
+  description: "가장 나 다운 삶을 설계하는 혁신 플랫폼",
 };
 
 export default function RootLayout({
@@ -16,14 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased selection:bg-blue-500/30`}>
-        <div className="flex min-h-screen bg-slate-950 text-slate-200">
-          <Sidebar />
-          <main className="flex-1 overflow-y-auto relative">
-            {children}
-          </main>
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning className={`${inter.className} antialiased selection:bg-blue-500/30 bg-slate-50 text-slate-900 flex flex-col min-h-screen`}>
+        <TopNavigation />
+        <main className="flex-1 w-full relative">
+          {children}
+        </main>
       </body>
     </html>
   );
